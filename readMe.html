@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .at{
+            text-align: center;
+            color: whitesmoke;
+            margin-top: 100px;
+            width: 600px;
+            height: 450px;
+            border: 2px solid gray;
+            padding: 10px;   
+            display: none;
+            position: absolute;
+            left: 350px;
+            top: 0px;
+            overflow: hidden;
+        }
+        h1{
+            color: red;
+        }
+        p{
+            text-decoration: solid;
+            text-align: start;
+            text-indent: 20px;
+        }
+        li{
+            text-align: start;
+
+        }
+        body{
+            background-image: url("https://images.unsplash.com/photo-1621947081720-86970823b77a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8Ymx1ZSUyMCUyMGJhY2tncm91bmR8ZW58MHx8MHx8&w=1000&q=80");
+            background-repeat: no-repeat;
+            background-size: cover;
+            position: relative;
+        }
+        #list{
+
+            margin: auto;
+            text-align: center;
+        }
+        #list h1{
+            cursor: pointer;
+            display: inline-block;
+            margin: 0px 40px;
+        }
+        ._list:hover{
+            color: white;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="at" >
+        <h1 id="ath"> What is a stream in node JS? </h1>
+        <p>What are Streams? Streams are objects that let you read data from a source or write data to a destination in continuous fashion</p>
+        <h1>What is stream and buffer in Node JS?</h1>
+        <p>Streams work on a concept called buffer. A buffer is a temporary memory that a stream takes to hold some data until it is consumed.</p>
+    </div>
+    <div id="list">
+    <h1 class="_list"> Streams </h1>
+    <h1 class="_list">Events Module</h1>
+    <h1 class="_list"> readable.pipe() </h1>
+    </div>
+    <div class="at" >
+        <h1>What is event modules in NodeJS?</h1>
+        <p>Node. js has a built-in module, called "Events", where you can create-, fire-, and listen for- your own events</p>
+        <h1>What is an event emitter in NodeJS?</h1>
+        <p>The EventEmitter is a module that facilitates communication/interaction between objects in Node. EventEmitter is at the core of Node asynchronous event-driven architecture.</p>
+        <ul><h1>How do Events work in Node. js?</h1>
+            <li>Since Node. js applications are event-driven, the events are triggered on its associated event handler.</li>
+            <li>An event handler is nothing but a callback function called when an event is triggered.</li>
+            <li>The main loop listens to the event triggers and then calls the corresponding event handler.
+            </li>
+        </ul>
+    </div>
+    <div class="at">
+        <h1>What is a readable stream? </h1>
+        <p>A readable stream lets you read data from a source. The source can be anything. It can be a simple file on your file system, a buffer in memory or even another stream. As streams are EventEmitters , they emit several events at various points. We will use these events to work with the streams</p>
+        <h1>What is Filestream pipe?</h1>
+        <p>These streams can be used to read and write data from files. Pipes can be used to connect multiple streams together. One of the most common example is to pipe the read and write stream together for the transfer of data from one file to the other.</p>
+        <h1>readable.pipe()</h1>
+        <p>This method attaches a writable stream to the  readable , causing it to switch  automatically into flowing mode and push mode all of its attached wriatable  , the flow of data will be automatically managed so that the destination writable stream is not overwelmed by faster readable stream</p>
+    </div>
+    <script>
+        let _list_ = document.getElementsByClassName("_list")
+        _list_[0].addEventListener("click", streamFunction);
+        function streamFunction() {
+            document.getElementsByClassName("at")[0].style.display = "block";
+            // document.getElementsByClassName("_list")[1].style.display="none"
+            document.getElementsByClassName("at")[1].style.display = "none";
+            document.getElementsByClassName("at")[2].style.display = "none";
+        }
+        _list_[1].addEventListener("click", eventFunction);
+        function eventFunction() {
+            document.getElementsByClassName("at")[1].style.display = "block";
+            // document.getElementsByClassName("_list")[0].style.display="none"
+            document.getElementsByClassName("at")[0].style.display = "none";
+            document.getElementsByClassName("at")[2].style.display = "none";
+
+        }
+        _list_[2].addEventListener("click", pipeFunction);
+        function pipeFunction() {
+            document.getElementsByClassName("at")[2].style.display = "block";
+            // document.getElementsByClassName("_list")[0].style.display="none"
+            document.getElementsByClassName("at")[0].style.display = "none";
+            document.getElementsByClassName("at")[1].style.display = "none";
+
+        }
+    </script>
+</body>
+</html>
